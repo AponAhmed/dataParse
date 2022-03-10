@@ -1,0 +1,69 @@
+/* 
+    Created on : Mar 10, 2022, 11:04:08 AM
+    Author     : Mahabub
+*/
+
+.container{
+    max-width: 1250px;
+}
+.navbar {
+    margin-bottom: 25px;
+}
+table.table.table-small tr th, table.table.table-small tr td {
+    padding: 2px 5px;
+    font-size: 14px;
+    max-width: 92px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#UrlInput {
+    min-height: 350px;
+}
+#UrlInput {
+    min-height: 350px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background: #0a79a4;
+    border: 1px solid #06374a;
+}
+.btn-primary:hover,.btn-primary:focus{
+    border: 1px solid #0a79a4;
+    background: #06374a;
+}
+
+.control-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.info-wrap {
+    min-width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+#counter {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: none;
+    background: #f6f6f6;
+}
+#counter.processing{
+    display: block;
+}
+.prog {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: rgba(10, 121, 164,.5);
+}
+.ionicon {
+    max-width: 24px;
+}
+.downloadBtn {
+    display: none;
+}
