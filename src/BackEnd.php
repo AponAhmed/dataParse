@@ -26,6 +26,9 @@ class BackEnd {
             $re = '@\b(([\w-]+://?|www[.])[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))@u';
             preg_match_all($re, $urlData, $matches, PREG_SET_ORDER, 0);
             // Print the entire match result
+            if (file_exists(STORAGE . self::$ResFile)) {
+                unlink(STORAGE . self::$ResFile);
+            }
             $this->que = [];
             foreach ($matches as $mt) {
                 $this->que[] = $mt[0];
@@ -46,7 +49,7 @@ class BackEnd {
         } else {
             //Each Time
             $newRes = "\n";
-            $newRes .= implode(",", $this->dataRow);
+            $newRes .= '"' . implode('","', $this->dataRow) . '"';
             $fp = fopen(STORAGE . self::$ResFile, 'a'); //opens file in append mode  
             fwrite($fp, $newRes);
             fclose($fp);
@@ -138,8 +141,8 @@ class BackEnd {
     }
 
     static function strFilter($str = "") {
-        $find = [","];
-        $replace = ["&comma;"]; //&comma;
+        $find = [];
+        $replace = []; //&comma;
         $str = str_replace($find, $replace, $str);
         return $str;
     }
